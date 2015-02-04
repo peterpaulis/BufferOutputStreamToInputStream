@@ -15,6 +15,7 @@
 @property (nonatomic, strong, readonly) NSInputStream * inputStream;
 
 - (void)addDataToBuffer:(NSData *)data;
+- (void)addBytesToBuffer:(const void *)bytes length:(NSUInteger)length;
 
 // output stream will remain open until you close it manually
 - (void)closeOutputStream;

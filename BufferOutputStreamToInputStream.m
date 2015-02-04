@@ -91,6 +91,18 @@
     
 }
 
+- (void)addBytesToBuffer:(const void *)bytes length:(NSUInteger)length {
+    
+    NSAssert([self.outputStream streamStatus] == NSStreamStatusOpen, @"NOT OPENED");
+    
+    [self.dataBuffer appendBytes:bytes length:length];
+    
+    if (self.hasSpaceAvailable) {
+        [self sendDataChunk];
+    }
+    
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Private
 ////////////////////////////////////////////////////////////////////////
