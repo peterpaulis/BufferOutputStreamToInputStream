@@ -8,6 +8,7 @@
 
 #import "BufferOutputStreamToInputStream.h"
 
+// Categories
 #import "NSStream+BoundPairAdditions.h"
 
 #define BufferedStreamBufferSize    512
